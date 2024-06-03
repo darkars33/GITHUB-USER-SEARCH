@@ -19,16 +19,16 @@ const Repo = ({ repos }) => {
     fetchRepos(repos);
   }, []);
 
-  console.log(repository);
 
   return (
     <>
+    <div className=" flex flex-col gap-3">
       {repository &&
         repository.map((repo) => {
           return (
             <>
               <div
-                className="p-3 bg-blue-400 w-[30%] flex gap-10 items-center justify-around rounded-2xl"
+                className="p-3 bg-blue-400 flex gap-10 items-center justify-around rounded-2xl"
                 id={repo.id}
               >
                 <div className="flex flex-col gap-3 w-[50%]">
@@ -58,9 +58,11 @@ const Repo = ({ repos }) => {
                   </div>
                 </div>
               </div>
+              
             </>
           );
         })}
+        </div>
     </>
   );
 };
